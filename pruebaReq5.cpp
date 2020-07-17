@@ -8,21 +8,27 @@
 
 void pruebaReq5 ()
 {
-    if(!jugadoresVacio(inscriptos))
+    jugadores inscriptos;
+    Make(inscriptos);
+    cargarJugadores(inscriptos);
+    printf("\n\n\n");
+    mostrarJugadores(inscriptos);
+    bool seguir = true;
+    while (seguir)
     {
-        if(Member(inscriptos,cedula)))
-        if(Member(inscriptos,cedula))
+        printf ("\nIngrese cedula de jugador a buscar en el torneo: ");
+        fflush(stdin);
+        string ci;
+        cargarString(ci);
+        if (esNumero(ci))
         {
-            Find(inscriptos,cedula);
-            mostrarJugador(inscriptos.info);
+            int cedula;
+            cedula = convertirString(ci);
+            mostrarJugadorCI(inscriptos, cedula);
+            seguir = false;
         }
         else
-        {
-            printf("El jugador indicado no existe");
-        }
+            printf ("Error: Ingrese una cedula valida.");
     }
-    else
-    {
-        printf("No existen jugadores registrados aun");
-    }
+}
 */

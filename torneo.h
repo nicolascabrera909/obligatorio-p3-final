@@ -2,7 +2,7 @@
 #define TORNEO_H_INCLUDED
 #include <stdio.h>
 
-const int N = 3;// cantidad de participantes del torneo
+const int N = 2;// cantidad de participantes del torneo
 typedef int torneo [N][N];
 
 ///typedef partida torneo [N] [N]; ???
@@ -15,9 +15,6 @@ void InsertarArista(torneo &t, int u, int v);
 
 //mustro si el torneo termino
 bool torneoFinalizado(torneo t);
-
-//Mostrar torneo
-void mostrarTorneo (torneo t);
 
 //Verificar si dos jugadores jugaron un partido
 bool JugaronPartido(torneo t,int v,int u);

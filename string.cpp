@@ -65,7 +65,7 @@ bool stringVacio (string s)
 void liberarMemoriaString (string &s)
 {
     delete []s ;
-   // s = NULL;
+    // s = NULL;
     strCrear(s);
 }
 
@@ -137,6 +137,71 @@ bool comparoString(string texto1, string texto2)
     if(texto1[i]!=texto2[i]&& resultado )
         resultado=false;
     return resultado;
+}
+
+//Devuelve si es un numero valido o no
+bool esNumero (string s)
+{
+    int i = 0;
+    bool valido = false;
+    int contador=0;
+    while (s[i] != '\0')
+    {
+        if(s[i] ==45 && i==0)
+        {
+            i++;
+            contador++;
+        }
+        if ( s[i] < 58 && s[i] > 47 )
+        {
+            contador++;
+        }
+        i++;
+    }
+    if(contador==i)
+        valido=true;
+    return valido;
+}
+
+//Calcula la potencia
+int potencia (int base, int exp)
+{
+    if (exp == 0)
+        return 1;
+    int i,w;
+    w = base;
+    for (i = 1; i < exp; i++)
+        base = base*w;
+    return base;
+}
+
+//Convierte strings de números a tipo de dato int. PRECONDICIÓN: el string solo contiene números
+int convertirString (string s)
+{
+    int i = 0;
+    bool esNagativo=false;
+    int numero = 0;
+    int largo = strlar(s);
+    if(largo == 1 && s[i] != 45)
+    {
+        numero = s[0] - 48;
+    }
+    else
+    {
+        if(s[i] == 45)
+        {
+            i = 1;
+            esNagativo = true;
+        }
+        int num = largo;
+        for (i; i<num; i++)
+        {
+            numero = numero + ((s[i] - 48) * potencia (10, num - 1 - i));
+        }
+        if(esNagativo)
+            numero = numero * -1;
+    }
+    return numero;
 }
 
 

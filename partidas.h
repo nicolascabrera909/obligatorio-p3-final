@@ -5,7 +5,7 @@
 
 
 
-typedef struct {partida arreglo[N*(N-1)/2];
+typedef struct {partida arreglo[(N*(N-1)/2)+1];
                 int tope;
                }Partidas;
 
@@ -24,9 +24,6 @@ partida Front (Partidas p);
 //devuelve una partida segun el numero de partida ingresado
 partida obtengoPartida(Partidas p,int num);
 
-//Devuelve las partidas sin la primer partida
-void RemFront (Partidas &p);
-
 //Dado un numero de partida, verificar si la partida existe
 bool existePartida (int num, Partidas p);
 
@@ -34,7 +31,7 @@ bool existePartida (int num, Partidas p);
 int obtengoTope (Partidas p);
 
 //verifico si puedo agregar mas partidas
-bool partidasLlena(Partidas p);		
+bool partidasLlena(Partidas p);
 
 //Muestro todas las partidas
 void muestroTodasPartidas (Partidas p);

@@ -12,17 +12,8 @@ int pruebaReq1 ()
     jugadores inscriptos;
     Make(inscriptos);
     cargarJugadores(inscriptos);
-    printf("\n\n\n");
+    printf("\n\n");
     mostrarJugadores(inscriptos);
-    string departamentoB;
-    strCrear(departamentoB);
-    printf ("\nIngrese departamento para buscar los jugadores: ");
-    cargarString(departamentoB);
-    jugadoresDepartamentos (departamentoB,inscriptos);
-    printf ("\nIngrese cedula de jugador a buscar en el torneo: ");
-    int aBuscar;
-    scanf("%d", &aBuscar);
-    mostrarJugadorCI(inscriptos, aBuscar);
 }
 */
 

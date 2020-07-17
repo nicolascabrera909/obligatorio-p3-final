@@ -11,7 +11,7 @@ void pruebaReq4 ()
     jugadores inscriptos;
     Make(inscriptos);
     cargarJugadores(inscriptos);
-    if(!hayJugadores(inscriptos))
+    if(hayJugadores(inscriptos))
     {
         string depto;
         strCrear(depto);

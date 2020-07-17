@@ -34,8 +34,6 @@
 		</Compiler>
 		<Unit filename=".gitattributes" />
 		<Unit filename="Obligatorio-P3.layout" />
-		<Unit filename="dfs.cpp" />
-		<Unit filename="dfs.h" />
 		<Unit filename="jugador.cpp" />
 		<Unit filename="jugador.h" />
 		<Unit filename="jugadores.cpp" />

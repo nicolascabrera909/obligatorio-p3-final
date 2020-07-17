@@ -27,9 +27,6 @@ bool Member(jugadores a,int cedula);
 //Dado un documento devuelvo un jugador
 jugador Find(jugadores a,int cedula);
 
-//modifico los datos del jugador, cambio un tipo de jugador por otro. Precondicion el jugador existe
-void Modify(jugadores &a, jugador elJugador);
-
 //Muestro el ABB jugadores en orden por pantalla nodo a nodo
 void mostrarJugadores (jugadores a);
 

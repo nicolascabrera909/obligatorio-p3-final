@@ -78,7 +78,7 @@ int obtengoCantidadJugadas(jugador a)
     return a.partidasDisputadas;
 }
 
-//Obtengo cantidad de partidas jugadas
+//Obtengo cantidad de partidas ganadas
 int obtengoCantidadGanadas(jugador a)
 {
     return a.partidasGanadas;

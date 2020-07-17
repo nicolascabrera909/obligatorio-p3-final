@@ -13,10 +13,8 @@ void pruebaReq3 ()
     scanf("%d",&numPartida);
     if(existePartida (numPartida, partidasJugadas))
     {
-
-
         partida laPartida=obtengoPartida(partidasJugadas,numPartida);
-        if(!partidaFinalizada(laPartida))
+        if(partidaFinalizada(laPartida))
         {
             int opcion;
             int j1,j2;
@@ -53,7 +51,7 @@ void pruebaReq3 ()
             }
         }
         else
-            printf("\nLa partida ya esta finalizada");
+            printf("\nLa partida no esta finalizada");
 
     }
     else
