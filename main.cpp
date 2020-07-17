@@ -102,6 +102,7 @@ int main ()
 {
     Partidas partidasJugadas;
     jugadores inscriptos;
+    Make (inscriptos);
     torneo elTorne;
     if(!partidasLlena(partidasJugadas))
     {
