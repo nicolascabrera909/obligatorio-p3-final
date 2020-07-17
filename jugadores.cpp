@@ -95,23 +95,23 @@ void jugadoresDepartamentos (string departamento, jugadores a,int &contador)
     }
 }
 
-/*
 //agregar un procedimiento que devuelva el jugador con la maxima cantidad de partidas y la cantidad de partidas correspondiente, precondicion la partida tiene que estar terminada
-jugador jugadorGanador(jugadores j,int maximo)
+jugador jugadorGanador(jugadores j,int &maximo,jugador &a1)
 {
     if(j!=NULL)
     {
         if(obtengoCantidadGanadas(j->info) > maximo)
         {
             maximo=obtengoCantidadGanadas(j->info);
-            jugadorGanador(j->hizq,maximo);
-            jugadorGanador(j->hder,maximo);
+            a1=j->info;
+            return jugadorGanador(j->hizq,maximo,a1),jugadorGanador(j->hder,maximo,a1);
         }
-        return jugadorGanador(j->hizq,maximo)
-        jugadorGanador(j->hder,maximo);
+        else
+        {
+        return jugadorGanador(j->hizq,maximo,a1),jugadorGanador(j->hder,maximo,a1);
+       }
     }
-    return j->info;
-}*/
+}
 
 //Dada la cédula de un jugador, listar todos sus datos, incluyendo además
 //la cantidad de partidas que lleva disputadas y la cantidad de partidas que lleva ganadas hasta el momento.

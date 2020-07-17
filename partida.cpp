@@ -12,13 +12,13 @@ void crearPartida(partida &a, int numero,int ci1, int ci2)
 //Imprimir partida
 void mostrarPartida(partida a)
 {
-    printf("Numero Partida: %d",a.numeroPartida);
-    printf("Ci de los jugadores: %d y %d",a.cedulaJ1, a.cedulaJ2);
-    printf("Ganador de la partida: %d",a.cedulaGanador);
+    printf("\nNumero Partida: %d",a.numeroPartida);
+    printf("\nCi de los jugadores: %d y %d",a.cedulaJ1, a.cedulaJ2);
+    printf("\nGanador de la partida: %d",a.cedulaGanador);
     if(a.finalizada)
-        printf("La partida esta finalizada");
+        printf("\nLa partida esta finalizada\n\n");
     else
-        printf("La partida esta en juego");
+        printf("\nLa partida esta en juego\n\n");
 }
 
 //Verifico si la ci del J1 es igual a la ci del J2
