@@ -1,0 +1,163 @@
+# depslib dependency file v1.0
+1594814533 source:c:\users\admin\documents\github\obligatorio-prog-iii\dfs.cpp
+	"dfs.h"
+
+1594838545 c:\users\admin\documents\github\obligatorio-prog-iii\dfs.h
+	"torneo.h"
+
+1594930937 c:\users\admin\documents\github\obligatorio-prog-iii\torneo.h
+	<stdio.h>
+
+1594924185 c:\users\admin\documents\github\obligatorio-prog-iii\partida.h
+	"jugadores.h"
+
+1594930311 source:c:\users\admin\documents\github\obligatorio-prog-iii\jugador.cpp
+	"jugador.h"
+
+1594924185 c:\users\admin\documents\github\obligatorio-prog-iii\jugador.h
+	"string.h"
+
+1594927688 c:\users\admin\documents\github\obligatorio-prog-iii\string.h
+	<stdio.h>
+
+1594931704 source:c:\users\admin\documents\github\obligatorio-prog-iii\jugadores.cpp
+	"jugadores.h"
+
+1594931675 c:\users\admin\documents\github\obligatorio-prog-iii\jugadores.h
+	"jugador.h"
+	"torneo.h"
+
+1594932066 source:c:\users\admin\documents\github\obligatorio-prog-iii\main.cpp
+	"torneo.h"
+	"partidas.h"
+	"jugadores.h"
+
+1594924185 source:c:\users\admin\documents\github\obligatorio-prog-iii\partida.cpp
+	"partida.h"
+
+1594932052 source:c:\users\admin\documents\github\obligatorio-prog-iii\string.cpp
+	"string.h"
+
+1594924185 source:c:\users\admin\documents\github\obligatorio-prog-iii\torneo.cpp
+	"torneo.h"
+
+1594927548 source:c:\users\admin\documents\github\obligatorio-prog-iii\partidas.cpp
+	"partidas.h"
+
+1594924185 c:\users\admin\documents\github\obligatorio-prog-iii\partidas.h
+	"partida.h"
+	"torneo.h"
+
+1594927280 source:c:\users\admin\documents\github\obligatorio-prog-iii\pruebareq1.cpp
+	"torneo.h"
+	"partidas.h"
+	"jugadores.h"
+
+1594927104 source:c:\users\admin\documents\github\obligatorio-prog-iii\pruebareq2.cpp
+	"torneo.h"
+	"partidas.h"
+	"jugadores.h"
+
+1594927611 source:c:\users\admin\documents\github\obligatorio-prog-iii\pruebareq3.cpp
+	"torneo.h"
+	"partidas.h"
+	"jugadores.h"
+
+1594931335 source:c:\users\admin\documents\github\obligatorio-prog-iii\pruebareq4.cpp
+	"torneo.h"
+	"partidas.h"
+	"jugadores.h"
+
+1594927104 source:c:\users\admin\documents\github\obligatorio-prog-iii\pruebareq5.cpp
+	"torneo.h"
+	"partidas.h"
+	"jugadores.h"
+
+1594927104 source:c:\users\admin\documents\github\obligatorio-prog-iii\pruebareq6.cpp
+	"torneo.h"
+	"partidas.h"
+	"jugadores.h"
+
+1594927104 source:c:\users\admin\documents\github\obligatorio-prog-iii\pruebareq7.cpp
+	"torneo.h"
+	"partidas.h"
+	"jugadores.h"
+
+1594933903 source:c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\jugador.cpp
+	"jugador.h"
+
+1594855806 c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\jugador.h
+	"string.h"
+
+1594927688 c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\string.h
+	<stdio.h>
+
+1594933949 source:c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\jugadores.cpp
+	"jugadores.h"
+
+1594931675 c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\jugadores.h
+	"jugador.h"
+	"torneo.h"
+
+1594930937 c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\torneo.h
+	<stdio.h>
+
+1594936339 source:c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\main.cpp
+	"torneo.h"
+	"partidas.h"
+	"jugadores.h"
+
+1594924185 c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\partidas.h
+	"partida.h"
+	"torneo.h"
+
+1594924185 c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\partida.h
+	"jugadores.h"
+
+1594924185 source:c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\partida.cpp
+	"partida.h"
+
+1594927548 source:c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\partidas.cpp
+	"partidas.h"
+
+1594927280 source:c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\pruebareq1.cpp
+	"torneo.h"
+	"partidas.h"
+	"jugadores.h"
+
+1594927104 source:c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\pruebareq2.cpp
+	"torneo.h"
+	"partidas.h"
+	"jugadores.h"
+
+1594927611 source:c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\pruebareq3.cpp
+	"torneo.h"
+	"partidas.h"
+	"jugadores.h"
+
+1594932247 source:c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\pruebareq4.cpp
+	"torneo.h"
+	"partidas.h"
+	"jugadores.h"
+
+1594934231 source:c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\pruebareq5.cpp
+	"torneo.h"
+	"partidas.h"
+	"jugadores.h"
+
+1594927104 source:c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\pruebareq6.cpp
+	"torneo.h"
+	"partidas.h"
+	"jugadores.h"
+
+1594927104 source:c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\pruebareq7.cpp
+	"torneo.h"
+	"partidas.h"
+	"jugadores.h"
+
+1594932052 source:c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\string.cpp
+	"string.h"
+
+1594924185 source:c:\users\admin\documents\github\version 1.1\obligatorio-prog-iii\torneo.cpp
+	"torneo.h"
+
