@@ -16,7 +16,7 @@ void InsBack (Partidas &p, partida e)
 //Dice si no hay partidas cargadas
 bool Empty (Partidas p)
 {
-    return (bool) (p.tope == 0);
+    return (p.tope == 0);
 }
 
 //Devuelve la primer partida creada
