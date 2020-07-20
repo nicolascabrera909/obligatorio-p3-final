@@ -36,9 +36,8 @@ bool partidasLlena(Partidas p);
 //Muestro todas las partidas
 void muestroTodasPartidas (Partidas p);
 
-//Dado el número que identifica a una partida, marcarla como finalizada
-/*void finalizarPartida (int num, Partidas p, partida &a, jugador &ganador); ///aumenta la cantidad de partidas ganadas*/
-//propuesta nico
+//Dado el numero que identifica a una partida, actualizo la partida
+void actualizarPartida (int num, Partidas &p, partida a);
 
 
 #endif // PARTIDAS_H_INCLUDED

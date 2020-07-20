@@ -34,9 +34,9 @@ partida obtengoPartida(Partidas p,int num) ///CAMBIAR IR NENECHO
 //Dado un numero de partida, verificar si la partida existe
 bool existePartida (int num, Partidas p)
 {
-    if (num >= p.tope)
+    if (num -1 >= p.tope)
         return false;
-    else if (num < 1)
+    else if (num -1 < 0)
         return false;
     else
         return true;
@@ -65,5 +65,9 @@ void muestroTodasPartidas (Partidas p)
     }
 }
 
-
+//Dado el numero que identifica a una partida, actualizo la partida
+void actualizarPartida (int num, Partidas &p, partida a)
+{
+    p.arreglo[num-1]=a;
+}
 
