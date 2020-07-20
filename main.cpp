@@ -1,4 +1,4 @@
-/*#include "jugadores.h"
+#include "jugadores.h"
 #include "torneo.h"
 #include "jugador.h"
 #include "partidas.h"
@@ -46,9 +46,9 @@ int main()
                     strCrear (nombre);
                     strCrear (apellido);
                     strCrear (departamento);
-                    int canJugadores = 1;
+                    int canJugadores = 0;
                     int ciJugador;
-                    while (canJugadores <= N)
+                    while (canJugadores < N)
                     {
                         printf ("Ingrese cedula del jugador: ");
                         fflush(stdin);
@@ -103,47 +103,49 @@ int main()
             }
             break; //Fin case 1
             case 2:
-                if(!partidasLlena(partidasJugadas))
+            if(!partidasLlena(partidasJugadas))
+            {
+                int ci1,ci2;
+                printf ("\nIngrese cedula del jugador1: ");
+                fflush(stdin);
+                scanf("%d",&ci1);
+                printf ("\nIngrese cedula del jugador2: ");
+                fflush(stdin);
+                scanf("%d",&ci2);
+                int contadorExist=0;
+                
+                if(hayJugadores(inscriptos))
                 {
-                    int ci1,ci2;
-                    printf ("\nIngrese cedula del jugador1: ");
-                    fflush(stdin);
-                    scanf("%d",&ci1);
-                    printf ("\nIngrese cedula del jugador2: ");
-                    fflush(stdin);
-                    scanf("%d",&ci2);
-                    int contadorExist=0;
-
-                    if(hayJugadores(inscriptos))
+                    if (Member(inscriptos, ci1))
+                        contadorExist++;
+                    if(Member(inscriptos, ci2))
+                        contadorExist=contadorExist+2;
+                    
+                    switch (contadorExist)
                     {
-                        if (Member(inscriptos, ci1))
-                            contadorExist++;
-                        if(Member(inscriptos, ci2))
-                            contadorExist=contadorExist+2;
-
-                        switch (contadorExist)
-                        {
-
+                            
                         case 0:
-                            printf ("\nLos documentos ingresados son incorrectos ");
+                            printf ("\nLos documentos ingresados son incorrectos\n");
                             break;
-
+                            
                         case 1:
-                            printf ("\nEl documento ingresado para el jugador2 no existe ");
+                            printf ("\nEl documento ingresado para el jugador2 no existe\n");
                             break;
-
+                            
                         case 2:
-                            printf ("\nEl documento ingresado para el jugador1 no existe ");
+                            printf ("\nEl documento ingresado para el jugador1 no existe\n");
                             break;
-
-
+                            
+                            
                         case 3:
                             if(ci1==ci2)
-                                printf ("\nLos documentos son iguales, ingrese dos documentos diferentes");
+                                printf ("\nLos documentos son iguales, ingrese dos documentos diferentes\n");
                             else
                             {
-                                if(JugaronPartido(elTorneo,ci1,ci2))
-                                    printf ("\nLos jugadores ya jugaron una partida entre si");
+                                int jug1=obtengoIdentificador(Find(inscriptos, ci1));
+                                int jug2= obtengoIdentificador(Find(inscriptos, ci2));
+                                if(JugaronPartido(elTorneo,jug1,jug2))
+                                    printf ("\nLos jugadores ya jugaron una partida entre si\n");
                                 else
                                 {
                                     int proximaPartida=obtengoTope(partidasJugadas);
@@ -154,23 +156,26 @@ int main()
                                     id1=obtengoIdentificador(Find(inscriptos,ci1));
                                     id2=obtengoIdentificador(Find(inscriptos,ci2));
                                     InsertarArista(elTorneo, id1, id2);
+                                    printf ("\nLa partida se creo de forma exitosa\n");
                                 }
                             }
                             break;
-
+                            
                         default:
-                            printf ("\nError");
+                            printf ("\nError\n");
                             break;
-                        }
                     }
-                    else
-                        printf ("\nNo existen jugadores inscriptos");
-
-
                 }
                 else
-                    printf ("\nNo se puede crear mas partidas, el torneo esta por finalizar");
-                break; //Fin case 2
+                    printf ("\nNo existen jugadores inscriptos\n");
+                
+                
+            }
+            else
+                printf ("\nNo se puede crear mas partidas, el torneo esta por finalizar\n");
+            break; //Fin case 2
+                    
+                    
             case 3:
             {
                 int numPartida=0;
@@ -265,4 +270,4 @@ int main()
 }
 
 
-*/
+
