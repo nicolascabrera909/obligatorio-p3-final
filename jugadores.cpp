@@ -98,7 +98,7 @@ void jugadoresDepartamentos (string departamento, jugadores a,int &contador)
 //agregar un procedimiento que devuelva el jugador con la maxima cantidad de partidas y la cantidad de partidas correspondiente, precondicion la partida tiene que estar terminada
 void jugadorGanador(jugadores j,int &maximo,jugador &a1)
 {
-       
+
     if(j!=NULL)
     {
         if(obtengoCantidadGanadas(j->info) > maximo)
@@ -120,7 +120,7 @@ void jugadorGanador(jugadores j,int &maximo,jugador &a1)
 //la cantidad de partidas que lleva disputadas y la cantidad de partidas que lleva ganadas hasta el momento.
 void mostrarJugadorCI (jugadores j, int cedula)
 {
-    if (!hayJugadores(j))
+    if (hayJugadores(j))
         if (Member(j, cedula))
             mostrarJugador(Find(j, cedula));
         else
