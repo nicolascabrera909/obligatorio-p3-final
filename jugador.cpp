@@ -18,7 +18,7 @@ void crearJugador(jugador &a,int ident,int ci,string nombre,string apellido,stri
 //Mostrar jugador
 void mostrarJugador(jugador a)
 {
-    printf("\nIdentificador: %d\nCedula: %d",a.identificador, a.cedula);
+    printf("\nIdentificador: %d\nCedula: %d",a.identificador+1, a.cedula);
     printf("\nNombre: ");
     mostrarString(a.nombre);
     printf("\nApellido: ");

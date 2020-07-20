@@ -1,7 +1,7 @@
-/*
+
 //Dado el número que identifica a una partida, marcarla como finalizada, ingresando en ese momento la cédula del ganador e incrementando su cantidad de partidas ganadas.
 //En caso de que la partida no exista o de que ya hubiera sido finalizada antes, la operación será cancelada, emitiendo un mensaje de error.
-
+/*
 #include "torneo.h"
 #include "partidas.h"
 #include "jugadores.h"
@@ -19,7 +19,7 @@ void pruebaReq3 ()
             int opcion;
             int j1,j2;
             jugador ganador,perdedor;
-            obtengoJugadores(laPartida,j1,j2);
+            obtengoCIJugadores(laPartida,j1,j2);
             printf("\nCI Jugador 1: %d",j1);
             printf("\nCI Jugador 2: %d",j2);
             printf("\nIngrese el numero del jugador ganador (1/2): ");
