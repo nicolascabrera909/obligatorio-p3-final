@@ -35,6 +35,14 @@ void mostrarString (string s)
     //Soliciar en el main lo que se quiere mostrar
     while (s[i] != '\0')
     {
+        if (i == 0) //Primer char
+        {
+            if ((96 < s[i] && s[i]< 123)) //Si es minuscula
+            {
+                printf ("%c",s[i] - 32); //Lo imprime en mayuscula
+                i++;
+            }
+        }
         printf("%c",s[i]);
         i++;
     }
@@ -204,5 +212,18 @@ int convertirString (string s)
     return numero;
 }
 
-
+//Dice si un string posee solo letras
+bool esSoloLetras(string s)
+{
+    bool es = true;
+    int i = 0;
+    while (s[i] != '\0' && es)
+    {
+        if (((64 < s[i] && s[i] < 91) || (96 < s[i] && s[i]< 123) || s[i] == 39)) //Mayusculas - Minusculas - Comilla simple
+            i++;
+        else
+            es = false;
+    }
+    return es;
+}
 

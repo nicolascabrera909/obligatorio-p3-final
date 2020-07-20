@@ -47,5 +47,7 @@ int potencia (int base, int exp);
 //Convierte strings de números a tipo de dato int. PRECONDICIÓN: el string solo contiene números
 int convertirString (string s);
 
+//Dice si un string posee solo letras
+bool esSoloLetras(string s);
 
 #endif // STRING_H_INCLUDED
