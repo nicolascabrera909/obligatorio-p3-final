@@ -229,6 +229,26 @@ int main()
             }
             break; //Fin case 3
             case 4:
+            {
+                    if(hayJugadores(inscriptos))
+                    {
+                        string depto;
+                        strCrear(depto);
+                        printf ("\nIngrese departamento: ");
+                        cargarString(depto);
+                        int contador=0;
+                        jugadoresDepartamentos(depto, inscriptos, contador);
+                        if(contador==0)
+                        {
+                            printf ("\nNo hay jugadores en el torneo del departamento de ");
+                            mostrarString(depto);
+                            printf("\n");
+                        }
+                    }
+                    else
+                        printf ("\nNo hay jugadores inscriptos en el torneo.\n");
+                }
+                break; //Fin case 4
                 break; //Fin case 4
             case 5:
                 break; //Fin case 5
