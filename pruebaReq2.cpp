@@ -1,5 +1,5 @@
-/*
-2. Dadas las cédulas de dos jugadores, iniciar una nueva partida entre ellos.
+
+/*2. Dadas las cédulas de dos jugadores, iniciar una nueva partida entre ellos.
 El número de la nueva partida será consecutivo al de la última partida registrada hasta el momento.
 En caso de que esos mismos dos jugadores ya hayan disputado una partida, la operación será cancelada, emitiendo un mensaje de error.
 Lo mismo en caso de que alguno de los dos jugadores no exista o de que un jugador pretenda jugar consigo mismo.

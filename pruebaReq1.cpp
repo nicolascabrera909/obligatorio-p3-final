@@ -29,7 +29,7 @@
 */
 
 ///PRUEBA 2
-
+/*
 int prueba2Req1 ()
 {
     jugador elJugador;
@@ -67,7 +67,7 @@ int prueba2Req1 ()
     printf ("\nIngrese departamento para buscar los jugadores: ");
     cargarString(departamentoB);
     jugadoresDepartamentos (departamentoB,inscriptos);
-}
+}*/
 
 
 ///PRUEBA CARGA DE JUGADORES
