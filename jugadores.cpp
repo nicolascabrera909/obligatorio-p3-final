@@ -96,19 +96,22 @@ void jugadoresDepartamentos (string departamento, jugadores a,int &contador)
 }
 
 //agregar un procedimiento que devuelva el jugador con la maxima cantidad de partidas y la cantidad de partidas correspondiente, precondicion la partida tiene que estar terminada
-jugador jugadorGanador(jugadores j,int &maximo,jugador &a1)
+void jugadorGanador(jugadores j,int &maximo,jugador &a1)
 {
+       
     if(j!=NULL)
     {
         if(obtengoCantidadGanadas(j->info) > maximo)
         {
             maximo=obtengoCantidadGanadas(j->info);
             a1=j->info;
-            return jugadorGanador(j->hizq,maximo,a1),jugadorGanador(j->hder,maximo,a1);
+            jugadorGanador(j->hizq,maximo,a1);
+            jugadorGanador(j->hder,maximo,a1);
         }
         else
         {
-        return jugadorGanador(j->hizq,maximo,a1),jugadorGanador(j->hder,maximo,a1);
+            jugadorGanador(j->hizq,maximo,a1);
+            jugadorGanador(j->hder,maximo,a1);
        }
     }
 }

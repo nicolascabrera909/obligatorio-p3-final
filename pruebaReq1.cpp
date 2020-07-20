@@ -1,4 +1,4 @@
-/*
+
 //Cargar los datos de todos los jugadores que participan del torneo.
 //Esta operación se ejecutará solamente una vez, al comienzo del torneo.
 //Los jugadores serán inscriptos respetando el orden de llegada, y ordenados por cédula de identidad.
@@ -7,7 +7,7 @@
 #include "partidas.h"
 #include "jugadores.h"
 
-int pruebaReq1 ()
+/*int pruebaReq1 ()
 {
     jugadores inscriptos;
     Make(inscriptos);
@@ -18,7 +18,7 @@ int pruebaReq1 ()
 */
 
 ///PRUEBA 2
-/*
+
 int prueba2Req1 ()
 {
     jugador elJugador;
@@ -61,6 +61,6 @@ int prueba2Req1 ()
     cargarString(departamentoB);
     jugadoresDepartamentos (departamentoB,inscriptos);
 }
-*/
+
 
 

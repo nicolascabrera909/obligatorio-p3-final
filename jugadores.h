@@ -44,7 +44,7 @@ void jugadoresDepartamentos (string departamento, jugadores a, int &cant);//,int
 void muestroJugadorDepartamento (jugadores j, string departamento, int &cant);
 
 //agregar un procedimiento que devuelva el jugador con la maxima cantidad de partidas y la cantidad de partidas correspondiente
-jugador jugadorGanador(jugadores j,int &maximo,jugador &a);
+void jugadorGanador(jugadores j,int &maximo,jugador &a1);
 
 //Dada la cédula de un jugador, listar todos sus datos, incluyendo además
 //la cantidad de partidas que lleva disputadas y la cantidad de partidas que lleva ganadas hasta el momento.
