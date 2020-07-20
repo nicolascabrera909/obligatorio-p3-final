@@ -33,7 +33,7 @@ void mostrarString (string s)
 {
     int i=0;
     //Soliciar en el main lo que se quiere mostrar
-    while (s[i] != '\0')
+    while (s[i] != '\0'/* && s[i] != '\n'*/)
     {
         if (i == 0) //Primer char
         {

@@ -14,11 +14,13 @@ void mostrarPartida(partida a)
 {
     printf("\nNumero Partida: %d",a.numeroPartida);
     printf("\nCi de los jugadores: %d y %d",a.cedulaJ1, a.cedulaJ2);
-    printf("\nGanador de la partida: %d",a.cedulaGanador);
     if(a.finalizada)
-        printf("\nLa partida esta finalizada\n\n");
+    {
+        printf("\nGanador de la partida: %d",a.cedulaGanador);
+        printf("\nLa partida esta finalizada\n");
+    }
     else
-        printf("\nLa partida esta en juego\n\n");
+        printf("\nLa partida esta en juego\n");
 }
 
 //Verifico si la ci del J1 es igual a la ci del J2
