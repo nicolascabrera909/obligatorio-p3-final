@@ -39,5 +39,7 @@ void muestroTodasPartidas (Partidas p);
 //Dado el numero que identifica a una partida, actualizo la partida
 void actualizarPartida (int num, Partidas &p, partida a);
 
+// verifico que las partidas esten terminadas
+bool partidasTerminadas(Partidas p);
 
 #endif // PARTIDAS_H_INCLUDED

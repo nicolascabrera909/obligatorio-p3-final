@@ -50,10 +50,9 @@ void jugadorGanador(jugadores j,int &maximo,jugador &a1);
 //la cantidad de partidas que lleva disputadas y la cantidad de partidas que lleva ganadas hasta el momento.
 void mostrarJugadorCI (jugadores j, int cedula);
 
-/*//Incrementar partidas ganadas y partidas jugadas a jugador
-void incrementarPartidasGanador (jugadores j, jugador &a, int cedula);
+//Actualizar datos de jugador en arbol
+void actualizarJugador (jugadores &a, jugador elJug, int cedula);
 
-//Incrementar partidas ganadas y partidas jugadas a jugador
-void incrementarPartidasPerdedor (jugadores j, jugador &a, int cedula);*/
+
 
 #endif // jugadores_H_INCLUDED

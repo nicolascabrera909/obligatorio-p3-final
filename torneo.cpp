@@ -15,33 +15,31 @@ void Crear(torneo &t)
 //Agregar una partida al torneo
 void InsertarArista(torneo &t, int u, int v)
 {
-   t[u][v]=1;
-    t[v][u]=1;
+   t[u-1][v-1]=1;
+    t[v-1][u-1]=1;
 }
 
 //Muestro si el torneo termino
 bool torneoFinalizado(torneo t)
 {
-    bool finalizado = true;
-    while(finalizado)
+    int i=0,j=0;
+    bool noFinalizado = true;
+    while(i<N && noFinalizado)
     {
-        for(int i=0; i<N; i++)
+        while(j<N && noFinalizado)
         {
-            for(int j=0; j<N; j++)
-            {
-                if ((i!=j) && (t[i][j]!=1))
-                {
-                    finalizado = false;
-                }
-            }
+            if ((i!=j) && (t[i][j]!=1))
+                noFinalizado=false;
+            j++;
         }
+        i++;
     }
-    return finalizado;
+    return noFinalizado;
 }
 
 //Verificar si dos jugadores jugaron un partido
 bool JugaronPartido(torneo t,int v,int u)
 {
-    return t[u][v]>0;
+    return t[u-1][v-1]>0;
 }
 

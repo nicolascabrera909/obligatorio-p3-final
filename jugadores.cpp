@@ -130,3 +130,16 @@ void mostrarJugadorCI (jugadores j, int cedula)
 }
 
 
+//Actualizar datos de jugador en arbol
+void actualizarJugador (jugadores &a, jugador elJug, int cedula)
+{
+    if(obtengoCedula(a->info)==cedula)
+        a->info=elJug;
+    else
+    {
+        if(obtengoCedula(a->info)>cedula)
+            actualizarJugador(a->hizq,elJug, cedula);
+        else
+            actualizarJugador(a->hder,elJug, cedula);
+    }
+}

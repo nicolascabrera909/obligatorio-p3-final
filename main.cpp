@@ -1,4 +1,4 @@
-#include "jugadores.h"
+/*#include "jugadores.h"
 #include "torneo.h"
 #include "jugador.h"
 #include "partidas.h"
@@ -335,3 +335,4 @@ int main()
 }
 
 
+*/

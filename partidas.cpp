@@ -70,4 +70,16 @@ void actualizarPartida (int num, Partidas &p, partida a)
 {
     p.arreglo[num-1]=a;
 }
-
+// verifico que las partidas esten terminadas
+bool partidasTerminadas(Partidas p)
+{
+    int i=0;
+    bool terminado=true;
+    while (i<p.tope && terminado)
+    {
+        if(!partidaFinalizada(p.arreglo[i]))
+            terminado=false;
+        i++;
+    }
+    return terminado;
+}
