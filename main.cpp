@@ -1,4 +1,4 @@
-/*#include "jugadores.h"
+#include "jugadores.h"
 #include "torneo.h"
 #include "jugador.h"
 #include "partidas.h"
@@ -142,7 +142,10 @@ int main()
                                         printf ("\nLos documentos son iguales, ingrese dos documentos diferentes");
                                     else
                                     {
-                                        if(JugaronPartido(elTorneo,ci1,ci2))
+                                        int id1,id2;
+                                        id1=obtengoIdentificador(Find(inscriptos,ci1));
+                                        id2=obtengoIdentificador(Find(inscriptos,ci2));
+                                        if(JugaronPartido(elTorneo,id1,id2))
                                             printf ("\nLos jugadores ya jugaron una partida entre si");
                                         else
                                         {
@@ -150,9 +153,6 @@ int main()
                                             partida nuevaPartida;
                                             crearPartida(nuevaPartida, proximaPartida, ci1, ci2);
                                             InsBack (partidasJugadas, nuevaPartida);
-                                            int id1,id2;
-                                            id1=obtengoIdentificador(Find(inscriptos,ci1));
-                                            id2=obtengoIdentificador(Find(inscriptos,ci2));
                                             InsertarArista(elTorneo, id1, id2);
                                         }
                                     }
@@ -179,7 +179,7 @@ int main()
                     if(existePartida (numPartida, partidasJugadas))
                     {
                         partida laPartida=obtengoPartida(partidasJugadas,numPartida);
-                        if(partidaFinalizada(laPartida))
+                        if(!partidaFinalizada(laPartida))
                         {
                             int opcion;
                             int j1,j2;
@@ -199,6 +199,9 @@ int main()
                                     incrementarGanadas (ganador);
                                     incrementarJugadas (ganador);
                                     incrementarJugadas (perdedor);
+                                    actualizarPartida(numPartida, partidasJugadas, laPartida);
+                                    actualizarJugador(inscriptos,ganador,obtengoCedula(ganador));
+                                    actualizarJugador(inscriptos,perdedor,obtengoCedula(perdedor));
                                     break;
                                     
                                 case 2:
@@ -209,6 +212,9 @@ int main()
                                     incrementarGanadas (ganador);
                                     incrementarJugadas (ganador);
                                     incrementarJugadas (perdedor);
+                                    actualizarPartida(numPartida, partidasJugadas, laPartida);
+                                    actualizarJugador(inscriptos,ganador,obtengoCedula(ganador));
+                                    actualizarJugador(inscriptos,perdedor,obtengoCedula(perdedor));
                                     break;
                                     
                                 default:
@@ -288,11 +294,15 @@ int main()
                     {
                         if (torneoFinalizado(elTorneo))
                         {
-                            jugador j1;
-                            int maximo = 0;
-                            jugadorGanador(inscriptos, maximo, j1);
-                            printf("El jugador ganador es: ");
-                            mostrarJugador(j1);
+                            if(partidasTerminadas(partidasJugadas))
+                            {
+                                    jugador j1;
+                                    int maximo = 0;
+                                    jugadorGanador(inscriptos, maximo, j1);
+                                    printf("El jugador ganador es: ");
+                                    mostrarJugador(j1);
+                            }else
+                                printf("\nEl torneo no ha finalizado, todavia quedan partidas en juego\n");
                         }
                         else
                         {
@@ -335,4 +345,5 @@ int main()
 }
 
 
-*/
+
+
