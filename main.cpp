@@ -1,6 +1,5 @@
 #include "jugadores.h"
 #include "torneo.h"
-#include "jugador.h"
 #include "partidas.h"
 #include <stdlib.h>
 
@@ -77,7 +76,7 @@ int main()
                                                 Insert(inscriptos,elJugador);
                                                 canJugadores++;
                                                 printf ("\n");
-                                                
+
                                             }
                                             else
                                                 printf ("Error: El departamento del jugador no es valido. Ingrese los datos nuevamente.\n");
@@ -113,30 +112,30 @@ int main()
                         fflush(stdin);
                         scanf("%d",&ci2);
                         int contadorExist=0;
-                        
+
                         if(hayJugadores(inscriptos))
                         {
                             if (Member(inscriptos, ci1))
                                 contadorExist++;
                             if(Member(inscriptos, ci2))
                                 contadorExist=contadorExist+2;
-                            
+
                             switch (contadorExist)
                             {
-                                    
+
                                 case 0:
                                     printf ("\nLos documentos ingresados son incorrectos ");
                                     break;
-                                    
+
                                 case 1:
                                     printf ("\nEl documento ingresado para el jugador2 no existe ");
                                     break;
-                                    
+
                                 case 2:
                                     printf ("\nEl documento ingresado para el jugador1 no existe ");
                                     break;
-                                    
-                                    
+
+
                                 case 3:
                                     if(ci1==ci2)
                                         printf ("\nLos documentos son iguales, ingrese dos documentos diferentes");
@@ -157,7 +156,7 @@ int main()
                                         }
                                     }
                                     break;
-                                    
+
                                 default:
                                     printf ("\nError");
                                     break;
@@ -165,8 +164,8 @@ int main()
                         }
                         else
                             printf ("\nNo existen jugadores inscriptos");
-                        
-                        
+
+
                     }
                     else
                         printf ("\nNo se puede crear mas partidas, el torneo esta por finalizar");
@@ -203,7 +202,7 @@ int main()
                                     actualizarJugador(inscriptos,ganador,obtengoCedula(ganador));
                                     actualizarJugador(inscriptos,perdedor,obtengoCedula(perdedor));
                                     break;
-                                    
+
                                 case 2:
                                     finalizarLaPartida(laPartida);
                                     cargarGanador(laPartida, j2);
@@ -216,7 +215,7 @@ int main()
                                     actualizarJugador(inscriptos,ganador,obtengoCedula(ganador));
                                     actualizarJugador(inscriptos,perdedor,obtengoCedula(perdedor));
                                     break;
-                                    
+
                                 default:
                                     printf("\nLa opcion ingresada no es correcta");
                                     break;
