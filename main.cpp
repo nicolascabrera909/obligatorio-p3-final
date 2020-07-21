@@ -1,4 +1,4 @@
-/*#include "jugadores.h"
+#include "jugadores.h"
 #include "torneo.h"
 #include "partidas.h"
 #include <stdlib.h>
@@ -334,4 +334,4 @@ int main()
 }
 
 
-*/
+
