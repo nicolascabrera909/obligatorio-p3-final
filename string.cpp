@@ -23,7 +23,7 @@ void cargarString (string &s)
         scanf ("%c", &car);
     }
     auxS[i]='\0';
-    liberarMemoriaString(s);
+    //liberarMemoriaString(s);
     s= new char[i];
     s=auxS;
 }

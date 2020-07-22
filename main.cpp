@@ -132,6 +132,7 @@ int main()
                     }
                     break; //Fin case 1
                     case 2:
+                    {
                         if(!partidasLlena(partidasJugadas))
                         {
                             if(hayJugadores(inscriptos)) //Lo pongo aca para no pedir las cedulas al pepe
@@ -144,30 +145,21 @@ int main()
                                 fflush(stdin);
                                 scanf("%d",&ci2);
                                 int contadorExist=0;
-
-                                //if(hayJugadores(inscriptos))
-                                //{
                                 if (Member(inscriptos, ci1))
                                     contadorExist++;
                                 if(Member(inscriptos, ci2))
                                     contadorExist=contadorExist+2;
-
                                 switch (contadorExist)
                                 {
-
                                 case 0:
                                     printf ("\nLos documentos ingresados son incorrectos.");
                                     break;
-
                                 case 1:
                                     printf ("\nEl documento ingresado para el jugador 2 no existe.");
                                     break;
-
                                 case 2:
                                     printf ("\nEl documento ingresado para el jugador 1 no existe.");
                                     break;
-
-
                                 case 3:
                                     if(ci1==ci2)
                                         printf ("\nLos documentos son iguales, ingrese dos documentos diferentes.");
@@ -199,6 +191,7 @@ int main()
                         }
                         else
                             printf ("\nNo se pueden crear mas partidas, el torneo esta por finalizar");
+                    }
                         break; //Fin case 2
                     case 3:
                     {
@@ -231,7 +224,6 @@ int main()
                                         incrementarJugadas (ganador);
                                         incrementarJugadas (perdedor);
                                         break;
-
                                     case 2:
                                         finalizarLaPartida(laPartida);
                                         cargarGanador(laPartida, j2);
@@ -241,7 +233,6 @@ int main()
                                         incrementarJugadas (ganador);
                                         incrementarJugadas (perdedor);
                                         break;
-
                                     default:
                                         printf("\nLa opcion ingresada no es correcta.");
                                         break;
@@ -371,15 +362,6 @@ int main()
                     default:
                         printf ("\nIngrese comando valido.");
                     }
-                    //char opcionEnter;
-                    //printf ("\n\nPresione ENTER para volver al menu..");
-                    //fflush(stdin);
-                    //scanf ("%c",&opcionEnter);
-                    //switch (opcionEnter)
-                    //{
-                    //default :
-                    //    verMenu = true;
-                    //}
                     printf ("\n\n");
                     system("pause");
                     verMenu = true;
