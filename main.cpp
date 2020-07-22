@@ -39,7 +39,7 @@ int main()
                 case 1:
                 {
                     system("cls");
-                    printf ("** Registrar jugadores en el torneo **\n\n");
+                    printf ("Registrar jugadores en el torneo\n\n");
                     if (!hayJugadores(inscriptos))
                     {
                         jugador elJugador;
@@ -120,7 +120,7 @@ int main()
                     else
                         printf ("Error: Los jugadores ya fueron inscriptos en el torneo.\n");
                     system("cls");
-                    printf ("Jugadores registrados correctamente: \n");
+                    printf ("Jugadores registrados:\n");
                     printf("\n+++++++++++++++++++++++++++++");
                     mostrarJugadores(inscriptos);
                 }
@@ -128,17 +128,19 @@ int main()
                 case 2:
                     if(!partidasLlena(partidasJugadas))
                     {
-                        int ci1,ci2;
-                        printf ("\nIngrese cedula del jugador1: ");
-                        fflush(stdin);
-                        scanf("%d",&ci1);
-                        printf ("\nIngrese cedula del jugador2: ");
-                        fflush(stdin);
-                        scanf("%d",&ci2);
-                        int contadorExist=0;
-
-                        if(hayJugadores(inscriptos))
+                        if(hayJugadores(inscriptos)) //Lo pongo aca para no pedir las cedulas al pepe
                         {
+                            int ci1,ci2;
+                            printf ("\nIngrese cedula del jugador 1: ");
+                            fflush(stdin);
+                            scanf("%d",&ci1);
+                            printf ("Ingrese cedula del jugador 2: ");
+                            fflush(stdin);
+                            scanf("%d",&ci2);
+                            int contadorExist=0;
+
+                            //if(hayJugadores(inscriptos))
+                            //{
                             if (Member(inscriptos, ci1))
                                 contadorExist++;
                             if(Member(inscriptos, ci2))
@@ -148,102 +150,106 @@ int main()
                             {
 
                             case 0:
-                                printf ("\nLos documentos ingresados son incorrectos ");
+                                printf ("\nLos documentos ingresados son incorrectos.");
                                 break;
 
                             case 1:
-                                printf ("\nEl documento ingresado para el jugador2 no existe ");
+                                printf ("\nEl documento ingresado para el jugador 2 no existe.");
                                 break;
 
                             case 2:
-                                printf ("\nEl documento ingresado para el jugador1 no existe ");
+                                printf ("\nEl documento ingresado para el jugador 1 no existe.");
                                 break;
 
 
                             case 3:
                                 if(ci1==ci2)
-                                    printf ("\nLos documentos son iguales, ingrese dos documentos diferentes");
+                                    printf ("\nLos documentos son iguales, ingrese dos documentos diferentes.");
                                 else
                                 {
-                                    if(JugaronPartido(elTorneo,ci1,ci2))
-                                        printf ("\nLos jugadores ya jugaron una partida entre si");
+                                    int id1,id2;
+                                    id1=obtengoIdentificador(Find(inscriptos,ci1));
+                                    id2=obtengoIdentificador(Find(inscriptos,ci2));
+                                    if(JugaronPartido(elTorneo,id1,id2))
+                                        printf ("\nLos jugadores ya jugaron una partida entre si.");
                                     else
                                     {
                                         int proximaPartida=obtengoTope(partidasJugadas);
                                         partida nuevaPartida;
                                         crearPartida(nuevaPartida, proximaPartida, ci1, ci2);
                                         InsBack (partidasJugadas, nuevaPartida);
-                                        int id1,id2;
-                                        id1=obtengoIdentificador(Find(inscriptos,ci1));
-                                        id2=obtengoIdentificador(Find(inscriptos,ci2));
                                         InsertarArista(elTorneo, id1, id2);
+                                        printf ("\nComienza la partida entre jugador %d y jugador %d.",id1,id2);
                                     }
                                 }
                                 break;
-
                             default:
                                 printf ("\nError");
                                 break;
                             }
                         }
                         else
-                            printf ("\nNo existen jugadores inscriptos");
-
-
+                            printf ("\nNo hay jugadores registrados en el torneo.");
                     }
                     else
-                        printf ("\nNo se puede crear mas partidas, el torneo esta por finalizar");
+                        printf ("\nNo se pueden crear mas partidas, el torneo esta por finalizar");
                     break; //Fin case 2
                 case 3:
                 {
                     int numPartida=0;
-                    printf("\nIngrese el numero de partida que quiere finalizar:");
-                    scanf("%d",&numPartida);
-                    if(existePartida (numPartida, partidasJugadas))
+                    if (!Empty(partidasJugadas))
                     {
-                        partida laPartida=obtengoPartida(partidasJugadas,numPartida);
-                        if(partidaFinalizada(laPartida))
+                        printf("\nIngrese el numero de partida que quiere finalizar: ");
+                        scanf("%d",&numPartida);
+                        if(existePartida (numPartida, partidasJugadas))
                         {
-                            int opcion;
-                            int j1,j2;
-                            jugador ganador,perdedor;
-                            obtengoCIJugadores(laPartida,j1,j2);
-                            printf("\nCI Jugador 1: %d",j1);
-                            printf("\nCI Jugador 2: %d",j2);
-                            printf("\nIngrese el numero del jugador ganador (1/2): ");
-                            scanf("%d",&opcion);
-                            switch (opcion)
+                            partida laPartida=obtengoPartida(partidasJugadas,numPartida);
+                            if(!partidaFinalizada(laPartida))
                             {
-                            case 1:
-                                finalizarLaPartida(laPartida);
-                                cargarGanador(laPartida, j1);
-                                ganador=Find(inscriptos,j1);
-                                perdedor=Find(inscriptos,j2);
-                                incrementarGanadas (ganador);
-                                incrementarJugadas (ganador);
-                                incrementarJugadas (perdedor);
-                                break;
+                                int opcion;
+                                int j1,j2;
+                                jugador ganador,perdedor;
+                                obtengoCIJugadores(laPartida,j1,j2);
+                                printf("\nCI Jugador 1: %d",j1);
+                                printf("\nCI Jugador 2: %d",j2);
+                                printf("\nIngrese el numero del jugador ganador (1/2): ");
+                                scanf("%d",&opcion);
+                                switch (opcion)
+                                {
+                                case 1:
+                                    finalizarLaPartida(laPartida);
+                                    cargarGanador(laPartida, j1);
+                                    ganador=Find(inscriptos,j1);
+                                    perdedor=Find(inscriptos,j2);
+                                    incrementarGanadas (ganador);
+                                    incrementarJugadas (ganador);
+                                    incrementarJugadas (perdedor);
+                                    break;
 
-                            case 2:
-                                finalizarLaPartida(laPartida);
-                                cargarGanador(laPartida, j2);
-                                ganador=Find(inscriptos,j2);
-                                perdedor=Find(inscriptos,j1);
-                                incrementarGanadas (ganador);
-                                incrementarJugadas (ganador);
-                                incrementarJugadas (perdedor);
-                                break;
+                                case 2:
+                                    finalizarLaPartida(laPartida);
+                                    cargarGanador(laPartida, j2);
+                                    ganador=Find(inscriptos,j2);
+                                    perdedor=Find(inscriptos,j1);
+                                    incrementarGanadas (ganador);
+                                    incrementarJugadas (ganador);
+                                    incrementarJugadas (perdedor);
+                                    break;
 
-                            default:
-                                printf("\nLa opcion ingresada no es correcta");
-                                break;
+                                default:
+                                    printf("\nLa opcion ingresada no es correcta.");
+                                    break;
+                                }
+                                printf ("\nPartida finalizada, jugador ganador: %d",opcion);
                             }
+                            else
+                                printf("\nLa partida no esta finalizada.");
                         }
                         else
-                            printf("\nLa partida no esta finalizada");
+                            printf("\nEl numero de partida ingresado no existe.");
                     }
                     else
-                        printf("\nEl numero de partida ingresado no existe");
+                        printf ("\nNo hay partidas en juego.");
                 }
                 break; //Fin case 3
                 case 4:
@@ -254,22 +260,27 @@ int main()
                         strCrear(depto);
                         printf ("Ingrese departamento: ");
                         cargarString(depto);
-                        if (esSoloLetras(depto))
+                        if (!stringVacio(depto))
                         {
-                            system("cls");
-                            printf ("Jugadores del departamento de ");
-                            mostrarString(depto);
-                            int contador=0;
-                            jugadoresDepartamentos(depto, inscriptos, contador);
-                            if(contador==0)
+                            if (esSoloLetras(depto))
                             {
-                                printf ("\n\nNo hay jugadores en el torneo del departamento de ");
+                                system("cls");
+                                printf ("Jugadores del departamento de ");
                                 mostrarString(depto);
-                                printf("\n");
+                                printf ("\n");
+                                int contador=0;
+                                jugadoresDepartamentos(depto, inscriptos, contador);
+                                if(contador==0)
+                                {
+                                    printf ("\nNo hay jugadores en el torneo del departamento de ");
+                                    mostrarString(depto);
+                                }
                             }
+                            else
+                                printf ("Error: El departamento no es valido.");
                         }
                         else
-                            printf ("Error: El departamento no es valido.");
+                            printf ("\nError: No se ha ingresado un departamento.");
                     }
                     else
                         printf ("\nNo hay jugadores inscriptos en el torneo.");
@@ -362,7 +373,9 @@ int main()
                 //default :
                 //    verMenu = true;
                 //}
+                printf ("\n\n");
                 system("pause");
+                verMenu = true;
                 system("cls");
             }
         }
