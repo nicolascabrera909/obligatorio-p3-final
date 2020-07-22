@@ -192,7 +192,7 @@ int main()
                         else
                             printf ("\nNo se pueden crear mas partidas, el torneo esta por finalizar");
                     }
-                        break; //Fin case 2
+                    break; //Fin case 2
                     case 3:
                     {
                         int numPartida=0;
