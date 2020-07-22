@@ -290,6 +290,7 @@ int main()
                             printf ("\nIngrese cedula de jugador a buscar en el torneo: ");
                             fflush(stdin);
                             string ci;
+                            strCrear(ci);
                             cargarString(ci);
                             if (esNumero(ci))
                             {
