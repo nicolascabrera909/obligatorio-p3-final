@@ -23,7 +23,7 @@ void cargarString (string &s)
         scanf ("%c", &car);
     }
     auxS[i]='\0';
-    liberarMemoriaString(s);
+    //liberarMemoriaString(s);
     s= new char[i];
     s=auxS;
 }
@@ -63,8 +63,7 @@ bool stringVacio (string s)
 {
 
     bool resultado=false;
-    //Soliciar en el main lo que se quiere mostrar
-    if(s [0] == '\0' && s [0] == '\n')
+    if(s [0] == '\0')
         resultado=true;
     return resultado;
 }

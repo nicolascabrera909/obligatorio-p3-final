@@ -55,7 +55,7 @@ int main()
                             printf ("Ingrese cedula del jugador: ");
                             fflush(stdin);
                             cargarString(cedula);
-                            if (stringVacio(cedula))
+                            if (!stringVacio(cedula))
                             {
                                 if (esNumero(cedula))
                                 {
@@ -65,21 +65,21 @@ int main()
                                         printf ("Ingrese nombre del jugador: ");
                                         fflush(stdin);
                                         cargarString(nombre);
-                                        if (stringVacio(nombre))
+                                        if (!stringVacio(nombre))
                                         {
                                             if (esSoloLetras(nombre))
                                             {
                                                 printf ("Ingrese apellido del jugador: ");
                                                 fflush(stdin);
                                                 cargarString(apellido);
-                                                if (stringVacio(apellido))
+                                                if (!stringVacio(apellido))
                                                 {
                                                     if (esSoloLetras(apellido))
                                                     {
                                                         printf ("Ingrese departamento del jugador: ");
                                                         fflush(stdin);
                                                         cargarString(departamento);
-                                                        if (stringVacio(departamento))
+                                                        if (!stringVacio(departamento))
                                                         {
                                                             if (esSoloLetras(departamento))
                                                             {
@@ -92,17 +92,20 @@ int main()
                                                             else
                                                                 printf ("Error: El departamento del jugador no es valido. Ingrese los datos nuevamente.\n");
                                                         }
-                                                        printf ("Error: Ingrese un departamento. Ingrese los datos nuevamente.\n");
+                                                        else
+                                                            printf ("Error: Ingrese un departamento. Ingrese los datos nuevamente.\n");
                                                     }
                                                     else
                                                         printf ("Error: El apellido del jugador no es valido. Ingrese los datos nuevamente.\n");
                                                 }
-                                                printf ("Error: Ingrese un apellido. Ingrese los datos nuevamente.\n");
+                                                else
+                                                    printf ("Error: Ingrese un apellido. Ingrese los datos nuevamente.\n");
                                             }
                                             else
                                                 printf ("Error: El nombre del jugador no es valido. Ingrese los datos nuevamente.\n");
                                         }
-                                        printf ("Error: Ingrese un nombre. Ingrese los datos nuevamente.\n");
+                                        else
+                                            printf ("Error: Ingrese un nombre. Ingrese los datos nuevamente.\n");
                                     }
                                     else
                                         printf ("Error: El jugador ya esta inscripto en el torneo. Ingrese los datos nuevamente.\n");
@@ -110,7 +113,8 @@ int main()
                                 else
                                     printf ("Error: La cedula del jugador no es correcta. Ingrese los datos nuevamente.\n");
                             }
-                            printf ("Error: ingrese una cedula.\n");
+                            else
+                                printf ("Error: ingrese una cedula.\n");
                         }
                     }
                     else
@@ -349,15 +353,16 @@ int main()
                 default:
                     printf ("\nIngrese comando valido.");
                 }
-                char opcionEnter;
-                printf ("\n\nPresione ENTER para volver al menu..");
-                fflush(stdin);
-                scanf ("%c",&opcionEnter);
-                switch (opcionEnter)
-                {
-                default :
-                    verMenu = true;
-                }
+                //char opcionEnter;
+                //printf ("\n\nPresione ENTER para volver al menu..");
+                //fflush(stdin);
+                //scanf ("%c",&opcionEnter);
+                //switch (opcionEnter)
+                //{
+                //default :
+                //    verMenu = true;
+                //}
+                system("pause");
                 system("cls");
             }
         }
