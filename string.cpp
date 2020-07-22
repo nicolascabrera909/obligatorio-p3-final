@@ -64,7 +64,7 @@ bool stringVacio (string s)
 
     bool resultado=false;
     //Soliciar en el main lo que se quiere mostrar
-    if(s [0] == '\0')
+    if(s [0] == '\0' && s [0] == '\n')
         resultado=true;
     return resultado;
 }
