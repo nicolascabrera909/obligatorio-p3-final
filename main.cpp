@@ -90,7 +90,7 @@ int main()
             printf ("Error: ingrese una cedula.\n");
     }
     system("cls");
-    printf ("Jugadores registrados correctamente:\n");
+    printf ("\nJugadores registrados correctamente:\n");
     printf("\n+++++++++++++++++++++++++++++\n");
     mostrarJugadores(inscriptos);
     printf ("\n\n");
@@ -202,11 +202,10 @@ int main()
                             scanf("%d",&numPartida);
                             if(existePartida (numPartida, partidasJugadas))
                             {
-                                partida laPartida=obtengoPartida(partidasJugadas,numPartida);
+                                partida laPartida = obtengoPartida(partidasJugadas,numPartida);
                                 if(!partidaFinalizada(laPartida))
                                 {
-                                    int opcion;
-                                    int j1,j2;
+                                    int opcion, j1, j2;
                                     jugador ganador,perdedor;
                                     obtengoCIJugadores(laPartida,j1,j2);
                                     printf("\nCI Jugador 1: %d",j1);
@@ -217,21 +216,27 @@ int main()
                                     {
                                     case 1:
                                         finalizarLaPartida(laPartida);
-                                        cargarGanador(laPartida, j1);
-                                        ganador=Find(inscriptos,j1);
-                                        perdedor=Find(inscriptos,j2);
-                                        incrementarGanadas (ganador);
-                                        incrementarJugadas (ganador);
-                                        incrementarJugadas (perdedor);
+                                        cargarGanador(laPartida,j1);
+                                        ganador = Find(inscriptos,j1);
+                                        perdedor = Find(inscriptos,j2);
+                                        incrementarGanadas(ganador);
+                                        incrementarJugadas(ganador);
+                                        incrementarJugadas(perdedor);
+                                        actualizarPartida(numPartida,partidasJugadas,laPartida);
+                                        actualizarJugador(inscriptos,ganador,obtengoCedula(ganador));
+                                        actualizarJugador(inscriptos,perdedor,obtengoCedula(perdedor));
                                         break;
                                     case 2:
                                         finalizarLaPartida(laPartida);
-                                        cargarGanador(laPartida, j2);
-                                        ganador=Find(inscriptos,j2);
-                                        perdedor=Find(inscriptos,j1);
-                                        incrementarGanadas (ganador);
-                                        incrementarJugadas (ganador);
-                                        incrementarJugadas (perdedor);
+                                        cargarGanador(laPartida,j2);
+                                        ganador = Find(inscriptos,j2);
+                                        perdedor = Find(inscriptos,j1);
+                                        incrementarGanadas(ganador);
+                                        incrementarJugadas(ganador);
+                                        incrementarJugadas(perdedor);
+                                        actualizarPartida(numPartida,partidasJugadas,laPartida);
+                                        actualizarJugador(inscriptos,ganador,obtengoCedula(ganador));
+                                        actualizarJugador(inscriptos,perdedor,obtengoCedula(perdedor));
                                         break;
                                     default:
                                         printf("\nLa opcion ingresada no es correcta.");
@@ -240,7 +245,7 @@ int main()
                                     printf ("\nPartida finalizada, jugador ganador: %d",opcion);
                                 }
                                 else
-                                    printf("\nLa partida no esta finalizada.");
+                                    printf("\nLa partida esta finalizada.");
                             }
                             else
                                 printf("\nEl numero de partida ingresado no existe.");
@@ -261,8 +266,7 @@ int main()
                             {
                                 if (esSoloLetras(depto))
                                 {
-                                    system("cls");
-                                    printf ("Jugadores del departamento de ");
+                                    printf ("\nJugadores del departamento de ");
                                     mostrarString(depto);
                                     printf ("\n");
                                     int contador=0;
@@ -327,7 +331,7 @@ int main()
                                 jugador j1;
                                 int maximo = 0;
                                 jugadorGanador(inscriptos, maximo, j1);
-                                printf("El jugador ganador es: ");
+                                printf("\nEl jugador ganador es: ");
                                 mostrarJugador(j1);
                             }
                             else
