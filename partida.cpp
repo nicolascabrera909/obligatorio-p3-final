@@ -12,7 +12,7 @@ void crearPartida(partida &a, int numero,int ci1, int ci2)
 //Imprimir partida
 void mostrarPartida(partida a)
 {
-    printf("\nNumero Partida: %d",a.numeroPartida);
+    printf("\nNumero Partida: %d",a.numeroPartida+1);
     printf("\nCi de los jugadores: %d y %d",a.cedulaJ1, a.cedulaJ2);
     if(a.finalizada)
     {
