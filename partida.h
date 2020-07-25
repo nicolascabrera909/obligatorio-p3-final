@@ -1,6 +1,6 @@
 #ifndef PARTIDA_H_INCLUDED
 #define PARTIDA_H_INCLUDED
-#include "jugadores.h"
+#include <stdio.h>
 
 typedef struct
             {
